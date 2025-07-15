@@ -1,6 +1,66 @@
-# Cookie Import and Setup Guide
+# 🍪 Cookie 设置指南
 
-## 🍪 How to Import Your PornHub Cookies
+## 🎯 快速开始 - 使用 Cookie 设置向导
+
+**最简单的方法：**
+
+1. 双击 `1-Cookie-Setup-Wizard.bat`
+2. 按照向导提示操作
+3. 几分钟内完成设置
+
+---
+
+## 🤔 什么是 Cookie？
+
+Cookie 是网站存储在您浏览器中的小文件，用于记住您的登录状态。使用 Cookie 可以：
+
+- ✅ 下载需要登录的私人视频
+- ✅ 获取更高质量的视频源
+- ✅ 避免地区限制
+- ✅ 提高下载成功率
+
+---
+
+## 🛠️ 详细设置步骤
+
+### 第一步：安装浏览器扩展
+
+安装 **EditThisCookie** 扩展：
+
+- **Chrome**: https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg
+- **Firefox**: https://addons.mozilla.org/en-US/firefox/addon/edit-this-cookie/
+- **Edge**: https://microsoftedge.microsoft.com/addons/detail/editthiscookie/neaplmfkghagebokkhpjpoebhdledlfi
+
+### 第二步：导出 Cookie
+
+1. 打开浏览器，访问目标网站（如 pornhub.com）
+2. 登录您的账户
+3. 点击 EditThisCookie 扩展图标 🍪
+4. 点击 "Export" 按钮 📤
+5. 复制所有 Cookie 数据
+
+### 第三步：使用设置向导
+
+1. 运行 `1-Cookie-Setup-Wizard.bat`
+2. 粘贴复制的 Cookie 数据
+3. 向导会自动创建正确的 Cookie 文件
+
+---
+
+## 📁 Cookie 文件说明
+
+Cookie 文件会自动保存在 `cookies/` 目录：
+
+```
+cookies/
+├── pornhub_cookies.json     # PornHub 网站
+├── xvideos_cookies.json     # XVideos 网站
+└── xhamster_cookies.json    # XHamster 网站
+```
+
+---
+
+## 🍪 传统方法 - 手动导入
 
 ### Method 1: Quick Import via Simple Interface
 

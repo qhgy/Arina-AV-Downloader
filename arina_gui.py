@@ -41,9 +41,32 @@ def main():
         input("按回车键退出...")
         sys.exit(1)
 
+def check_cookie_setup():
+    """检查Cookie设置并提示用户"""
+    import os
+    cookies_dir = "cookies"
+
+    # 检查是否有任何cookie文件
+    if os.path.exists(cookies_dir):
+        cookie_files = [f for f in os.listdir(cookies_dir) if f.endswith('.json')]
+        if cookie_files:
+            return True
+
+    # 没有cookie文件，提示用户
+    print("🍪 Cookie Setup Recommendation:")
+    print("   For better download experience, consider setting up cookies.")
+    print("   Run '1-Cookie-Setup-Wizard.bat' to get started!")
+    print("   This helps download private/premium content.")
+    print()
+    return False
+
 if __name__ == "__main__":
     print("=" * 50)
-    print("🌸 Arina AV Downloader v1.0.3")
+    print("🌸 Arina AV Downloader v1.0.9")
     print("Thanks to Arina for 10 years of companionship 💕")
     print("=" * 50)
+
+    # 检查Cookie设置
+    check_cookie_setup()
+
     main()
