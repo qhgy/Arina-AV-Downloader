@@ -71,13 +71,8 @@ echo    uv run python arina_gui.py
 echo    uv run python arina_cli.py
 echo.
 
-set /p choice="Start GUI version now? (y/n): "
-if /i "%choice%"=="y" (
-    echo Starting GUI version...
-    uv run python arina_gui.py
-) else (
-    echo Installation complete!
-    echo Remember: Activate virtual environment or use 'uv run' command
-)
-
-pause
+echo.
+echo Installation complete! Press Enter to start GUI version...
+pause >nul
+echo Starting GUI version...
+uv run python arina_gui.py

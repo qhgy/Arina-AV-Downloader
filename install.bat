@@ -51,12 +51,8 @@ echo.
 echo For detailed instructions, see: USER_GUIDE.md
 echo.
 
-set /p choice="Start GUI version now? (y/n): "
-if /i "%choice%"=="y" (
-    echo Starting GUI version...
-    python arina_gui.py
-) else (
-    echo Installation complete! You can run the program manually.
-)
-
-pause
+echo.
+echo Installation complete! Press Enter to start GUI version...
+pause >nul
+echo Starting GUI version...
+python arina_gui.py
