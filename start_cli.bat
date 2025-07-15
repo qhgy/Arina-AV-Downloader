@@ -1,8 +1,8 @@
 @echo off
-:: Arina Video Downloader - 简化启动脚本
+:: Arina AV Downloader - 简化启动脚本
 :: 调用PowerShell处理复杂逻辑，避免中文乱码
 
-title Arina Video Downloader
+title Arina AV Downloader
 
 :: 检查PowerShell是否可用
 powershell -Command "exit 0" >nul 2>&1

@@ -1,4 +1,4 @@
-# 🌸 Arina Video Downloader
+# 🌸 Arina AV Downloader
 
 **开箱即用的多平台视频下载器** - 支持YouTube、PornHub、Twitter等1800+网站
 
@@ -9,8 +9,8 @@
 ### 1️⃣ 下载项目
 ```bash
 # 下载到任意位置
-git clone https://github.com/qhgy/arina-video-downloader.git
-cd arina-video-downloader
+git clone https://github.com/qhgy/arina-av-downloader.git
+cd arina-av-downloader
 ```
 
 ### 2️⃣ 双击启动
