@@ -125,7 +125,29 @@ class PerfectAppleDownloader(QMainWindow):
         
         # 居中窗口
         self.center_window()
-    
+
+    def closeEvent(self, event):
+        """处理窗口关闭事件"""
+        if self.is_downloading:
+            reply = QMessageBox.question(
+                self,
+                "Confirm Exit",
+                "Download is in progress. Do you want to stop and exit?",
+                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                QMessageBox.StandardButton.No
+            )
+
+            if reply == QMessageBox.StandardButton.Yes:
+                # 停止下载
+                self.stop_download()
+                # 等待一下让下载停止
+                QApplication.processEvents()
+                event.accept()
+            else:
+                event.ignore()
+        else:
+            event.accept()
+
     def init_downloader(self):
         """初始化下载器"""
         try:
@@ -497,6 +519,18 @@ class PerfectAppleDownloader(QMainWindow):
         if self.is_downloading:
             self.is_downloading = False
             self.is_paused = False
+
+            # 尝试停止下载器中的任务
+            if hasattr(self, 'downloader') and self.current_task_id:
+                try:
+                    # 如果下载器有停止方法，调用它
+                    if hasattr(self.downloader, 'stop_task'):
+                        self.downloader.stop_task(self.current_task_id)
+                    elif hasattr(self.downloader, 'cancel_task'):
+                        self.downloader.cancel_task(self.current_task_id)
+                except Exception as e:
+                    print(f"⚠️ Error stopping download task: {e}")
+
             self.current_task_id = None
 
             # 重置UI
