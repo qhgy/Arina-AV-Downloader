@@ -132,10 +132,39 @@ class YtDlpExtractor(BaseExtractor):
             cookies_dir = Path('./cookies')
             
         if cookies_dir.exists():
-            for file in cookies_dir.glob("*_cookies.txt"):
-                platform = file.stem.replace("_cookies", "")
-                self.cookies_files[platform] = str(file)
-    
+            # 支持 .txt 和 .json 格式的cookie文件
+            for pattern in ["*_cookies.txt", "*_cookies.json"]:
+                for file in cookies_dir.glob(pattern):
+                    platform = file.stem.replace("_cookies", "")
+                    self.cookies_files[platform] = str(file)
+                    print(f"🍪 Found cookie file for {platform}: {file.name}")
+
+    def _convert_json_to_netscape(self, cookies_data, output_file):
+        """Convert JSON cookies to Netscape format for yt-dlp"""
+        try:
+            with open(output_file, 'w', encoding='utf-8') as f:
+                f.write("# Netscape HTTP Cookie File\n")
+                f.write("# This is a generated file! Do not edit.\n\n")
+
+                for cookie in cookies_data:
+                    domain = cookie.get('domain', '')
+                    flag = 'TRUE' if domain.startswith('.') else 'FALSE'
+                    path = cookie.get('path', '/')
+                    secure = 'TRUE' if cookie.get('secure', False) else 'FALSE'
+                    expiration = cookie.get('expirationDate', 0)
+                    if expiration == 0:
+                        expiration = 2147483647  # 默认过期时间
+                    name = cookie.get('name', '')
+                    value = cookie.get('value', '')
+
+                    # Netscape格式: domain flag path secure expiration name value
+                    f.write(f"{domain}\t{flag}\t{path}\t{secure}\t{int(expiration)}\t{name}\t{value}\n")
+
+            print(f"✅ Converted JSON cookies to Netscape format: {output_file}")
+        except Exception as e:
+            print(f"❌ Failed to convert cookies: {e}")
+            raise
+
     def extract_info(self, url: str) -> Dict[str, Any]:
         """Extract video information"""
         ydl_opts = {
@@ -214,17 +243,36 @@ class YtDlpExtractor(BaseExtractor):
         
         # Add cookies if available
         if platform in self.cookies_files:
-            ydl_opts['cookiefile'] = self.cookies_files[platform]
-            print(f"Using cookies for {platform}: {self.cookies_files[platform]}")
+            cookie_file = self.cookies_files[platform]
+            if cookie_file.endswith('.json'):
+                # 对于JSON格式的cookie，需要转换为yt-dlp可用的格式
+                try:
+                    import json
+                    with open(cookie_file, 'r', encoding='utf-8') as f:
+                        cookies_data = json.load(f)
+
+                    # 创建临时的Netscape格式cookie文件
+                    temp_cookie_file = cookie_file.replace('.json', '_temp.txt')
+                    self._convert_json_to_netscape(cookies_data, temp_cookie_file)
+                    ydl_opts['cookiefile'] = temp_cookie_file
+                    print(f"🍪 Using converted cookies for {platform}: {temp_cookie_file}")
+                except Exception as e:
+                    print(f"⚠️ Failed to convert JSON cookies: {e}")
+                    # 回退到不使用cookie文件
+                    pass
+            else:
+                ydl_opts['cookiefile'] = cookie_file
+                print(f"🍪 Using cookies for {platform}: {cookie_file}")
         
         if platform == 'pornhub':
             # PornHub specific config
             ydl_opts.update({
                 'age_limit': 18,
             })
-            # Don't use cookiesfrombrowser if we have cookies file
-            if platform not in self.cookies_files:
-                ydl_opts['cookiesfrombrowser'] = ('chrome', )
+            # 禁用从浏览器获取cookie，优先使用我们的cookie文件
+            # if platform not in self.cookies_files:
+            #     ydl_opts['cookiesfrombrowser'] = ('chrome', )
+            print(f"🚫 Disabled browser cookie extraction for {platform}")
         
         with self.yt_dlp.YoutubeDL(ydl_opts) as ydl:
             try:
