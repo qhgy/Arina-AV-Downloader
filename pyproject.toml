@@ -1,6 +1,6 @@
 [project]
 name = "arina-av-downloader"
-version = "1.1.5"
+version = "1.1.6"
 description = "Arina AV Downloader - Thanks to Arina for 10 years of companionship"
 readme = "README.md"
 requires-python = ">=3.9"
