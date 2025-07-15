@@ -1,4 +1,4 @@
-# 🌸 Arina AV Downloader v1.0.2
+# 🌸 Arina AV Downloader v1.0.3
 
 > Thanks to Arina for 10 years of companionship 💕
 
@@ -30,10 +30,10 @@ cd Arina-AV-Downloader
 pip install -r requirements.txt
 
 # 运行GUI版本
-python gui_main.py
+python arina_gui.py
 
 # 运行CLI版本
-python cli_main.py
+python arina_cli.py
 ```
 
 ## 🎮 使用说明
@@ -46,7 +46,7 @@ python cli_main.py
 
 ### CLI命令行使用
 ```bash
-python cli_main.py [视频URL] [选项]
+python arina_cli.py [视频URL] [选项]
 ```
 
 ## 📋 系统要求
@@ -57,11 +57,13 @@ python cli_main.py [视频URL] [选项]
 
 ## 🔄 更新日志
 
-### v1.0.2
-- 项目重命名为 Arina AV Downloader
-- 优化用户界面体验
-- 修复已知问题
-- 提升下载稳定性
+### v1.0.3
+- 🚀 新增UV虚拟环境支持 - 安装速度提升10-100倍
+- 📦 添加一键安装脚本 (install_uv.bat 和 install.bat)
+- 📖 完善安装指南 (INSTALL_GUIDE.md 和 UV_GUIDE.md)
+- 🌸 统一启动文件 (arina_gui.py 和 arina_cli.py)
+- 🔧 优化项目配置和依赖管理
+- 💕 提升小白用户安装体验
 
 ## 🤝 贡献与支持
 

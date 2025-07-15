@@ -46,7 +46,7 @@ def main():
                 downloader = UniversalDownloader()
                 return downloader.download(url, output_dir, quality, cookies, verbose)
         
-        print("🌸 Arina AV Downloader v1.0.2 - CLI")
+        print("🌸 Arina AV Downloader v1.0.3 - CLI")
         print("Thanks to Arina for 10 years of companionship 💕")
         print("-" * 50)
         

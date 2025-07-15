@@ -2,7 +2,7 @@
 chcp 65001 >nul
 echo.
 echo ========================================
-echo 🌸 Arina AV Downloader 一键安装脚本
+echo 🌸 Arina AV Downloader v1.0.3 一键安装脚本
 echo Thanks to Arina for 10 years of companionship 💕
 echo ========================================
 echo.

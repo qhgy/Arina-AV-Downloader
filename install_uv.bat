@@ -2,7 +2,7 @@
 chcp 65001 >nul
 echo.
 echo ========================================
-echo 🌸 Arina AV Downloader UV虚拟环境安装
+echo 🌸 Arina AV Downloader v1.0.3 UV虚拟环境安装
 echo Thanks to Arina for 10 years of companionship 💕
 echo ========================================
 echo.
