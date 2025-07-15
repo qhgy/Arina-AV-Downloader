@@ -65,9 +65,17 @@ logs/*.log
 logs/*.txt
 !logs/README.md
 
-# Cookies (sensitive)
+# Cookies (sensitive) - NEVER upload these!
+cookies/**/*.txt
+cookies/**/*.json
 cookies/*.txt
 cookies/*.json
+*.cookies.txt
+*.cookies.json
+*_cookies.txt
+*_cookies.json
+pornhub_cookies.*
+youtube_cookies.*
 !cookies/README.md
 
 # Temporary files
