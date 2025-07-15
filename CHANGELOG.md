@@ -1,10 +1,12 @@
-# Universal Video Downloader - 更新日志
+# Arina Video Downloader - 更新日志
 
-## [1.0.0] - 2024-12-19
+💝 **感谢新有菜Arina的10年陪伴** - 这个项目以Arina命名，纪念这份珍贵的友谊与陪伴
 
-### 🎉 首次正式发布
+## [1.0.0] - 首次正式发布
 
-这是Universal Video Downloader的第一个正式版本，经过大量优化和测试，现已稳定可用。
+### 🎉 正式版本发布
+
+这是Arina Video Downloader的第一个正式版本，经过大量优化和测试，现已稳定可用。
 
 ### ✨ 主要功能
 

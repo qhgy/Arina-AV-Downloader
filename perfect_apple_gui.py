@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Universal Video Downloader - Perfect Apple Style GUI
+Arina Video Downloader - Perfect Apple Style GUI
 Clean, Beautiful, Fully Functional
 """
 
@@ -141,7 +141,7 @@ class PerfectAppleDownloader(QMainWindow):
     
     def init_ui(self):
         """初始化用户界面"""
-        self.setWindowTitle("Universal Video Downloader")
+        self.setWindowTitle("Arina Video Downloader")
         self.setMinimumSize(600, 500)
         self.resize(700, 600)
         
@@ -822,7 +822,7 @@ def main():
 
     try:
         app = QApplication(sys.argv)
-        app.setApplicationName("Universal Video Downloader")
+        app.setApplicationName("Arina Video Downloader")
         app.setApplicationVersion("3.0")
 
         # 设置应用程序样式
