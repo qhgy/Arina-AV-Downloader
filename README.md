@@ -9,12 +9,13 @@
 ### 1️⃣ 下载项目
 ```bash
 # 下载到任意位置
-git clone https://github.com/your-repo/universal-video-downloader.git
-cd universal-video-downloader
+git clone https://github.com/qhgy/arina-video-downloader.git
+cd arina-video-downloader
 ```
 
 ### 2️⃣ 双击启动
-- **Windows**: 双击 `start.bat`
+- **Windows GUI**: 双击 `start_gui.bat` (图形界面)
+- **Windows CLI**: 双击 `start_cli.bat` (命令行)
 - **Mac/Linux**: 双击 `start.sh`
 
 ### 3️⃣ 开始下载
