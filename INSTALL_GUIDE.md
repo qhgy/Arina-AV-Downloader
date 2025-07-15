@@ -33,6 +33,12 @@
 
 ## 🔧 第三步：安装依赖
 
+### 方法一：UV虚拟环境（推荐，更快更稳定）
+1. 双击运行 `install_uv.bat` 文件
+2. 脚本会自动安装UV并创建虚拟环境
+3. 等待安装完成后选择是否启动程序
+
+### 方法二：传统pip安装
 1. 在文件夹中按住 `Shift` 键，右键点击空白处
 2. 选择 "在此处打开PowerShell窗口" 或 "在此处打开命令窗口"
 3. 在弹出的窗口中输入以下命令：
@@ -50,17 +56,32 @@ python -m pip install --upgrade pip
 
 # 重新安装依赖
 pip install -r requirements.txt
+
+# 或者使用国内镜像源
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
 
 ## 🚀 第四步：启动程序
 
-### 方法一：GUI图形界面（推荐新手）
+### 如果使用UV安装：
 ```bash
+# GUI版本
+uv run python arina_gui.py
+
+# CLI版本
+uv run python arina_cli.py --help
+
+# 或者先激活虚拟环境
+.venv\Scripts\activate
 python arina_gui.py
 ```
 
-### 方法二：命令行界面
+### 如果使用pip安装：
 ```bash
+# GUI版本（推荐新手）
+python arina_gui.py
+
+# CLI版本
 python arina_cli.py --help
 ```
 
