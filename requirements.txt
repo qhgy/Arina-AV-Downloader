@@ -1,0 +1,20 @@
+# Universal Video Downloader - 依赖包列表
+# 这是pip的回退支持文件，推荐使用uv进行包管理
+
+# 核心依赖
+yt-dlp>=2024.11.04
+
+# GUI依赖 (可选)
+# 在Windows和Linux上使用PyQt6
+PyQt6>=6.0.0; platform_system!="Darwin"
+
+# 在macOS上使用PySide6 (更好的兼容性)
+PySide6>=6.0.0; platform_system=="Darwin"
+
+# 开发依赖 (可选)
+# 取消注释以下行来安装开发工具
+# pytest>=7.0.0
+# black>=22.0.0
+# flake8>=6.0.0
+# mypy>=1.0.0
+# pytest-cov>=4.0.0

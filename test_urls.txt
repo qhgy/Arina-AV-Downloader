@@ -1,0 +1,11 @@
+# 测试URL列表 - 用于批量下载测试
+# 格式：每行一个URL，# 开头的行为注释
+
+# YouTube测试视频（公开短视频）
+https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+# 可以添加其他平台的测试URL
+# https://twitter.com/user/status/123456789
+# https://www.bilibili.com/video/BV1234567890
+
+# 注意：请确保URL有效且符合使用条款

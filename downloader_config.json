@@ -1,0 +1,27 @@
+{
+  "max_workers": 4,
+  "default_output_dir": "./downloads",
+  "default_quality": "best",
+  "default_format": "mp4",
+  "platforms": {
+    "youtube": {
+      "enabled": true,
+      "quality_preference": [
+        "1080",
+        "720",
+        "best"
+      ]
+    },
+    "pornhub": {
+      "enabled": true,
+      "quality_preference": [
+        "720",
+        "best"
+      ],
+      "age_verification": true
+    },
+    "generic": {
+      "enabled": true
+    }
+  }
+}
