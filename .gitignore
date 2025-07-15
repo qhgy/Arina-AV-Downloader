@@ -1,3 +1,13 @@
+# Development environment directories (NEVER push these)
+.cursor/**
+.kiro/**
+.specstory/**
+
+# Development environment directories (NEVER push these)
+.cursor/**
+.kiro/**
+.specstory/**
+
 # Python
 __pycache__/
 *.py[cod]

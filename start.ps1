@@ -6,14 +6,14 @@
 $OutputEncoding = [System.Text.Encoding]::UTF8
 
 # 设置窗口标题
-$Host.UI.RawUI.WindowTitle = "Universal Video Downloader - 启动中..."
+$Host.UI.RawUI.WindowTitle = "Arina Video Downloader - 启动中..."
 
 # 清屏并显示标题
 Clear-Host
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Blue
-Write-Host "   🎬 Universal Video Downloader" -ForegroundColor Blue
-Write-Host "   开箱即用的多平台视频下载器" -ForegroundColor Blue
+Write-Host "   🌸 Arina Video Downloader" -ForegroundColor Blue
+Write-Host "   感谢新有菜Arina的10年陪伴" -ForegroundColor Blue
 Write-Host "========================================" -ForegroundColor Blue
 Write-Host ""
 
@@ -134,7 +134,7 @@ function Main {
         }
         
         Write-Host ""
-        Write-Host "👋 感谢使用 Universal Video Downloader" -ForegroundColor Green
+        Write-Host "👋 感谢使用 Arina Video Downloader" -ForegroundColor Green
         
         # 如果是双击运行，暂停以便用户看到消息
         if ($MyInvocation.InvocationName -ne "&") {
