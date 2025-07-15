@@ -39,8 +39,8 @@ echo.
 echo [3/4] Installing project dependencies...
 echo This may take a few minutes, please wait...
 
-REM Install dependencies
-uv pip install -e .
+REM Install dependencies from requirements.txt
+uv pip install -r requirements.txt
 
 if %errorlevel% neq 0 (
     echo [!] Dependency installation failed!
