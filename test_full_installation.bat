@@ -8,9 +8,9 @@ echo.
 
 REM Set test directory
 set TEST_DIR=d:\test_arina_auto
-set GITHUB_URL=https://github.com/qhgy/Arina-AV-Downloader/archive/refs/tags/v1.0.8.zip
-set ZIP_FILE=Arina-AV-Downloader-v1.0.8.zip
-set EXTRACT_DIR=Arina-AV-Downloader-1.0.8
+set GITHUB_URL=https://github.com/qhgy/Arina-AV-Downloader/archive/refs/tags/v1.0.9.zip
+set ZIP_FILE=Arina-AV-Downloader-v1.0.9.zip
+set EXTRACT_DIR=Arina-AV-Downloader-1.0.9
 
 echo [1/5] Preparing test environment...
 if exist "%TEST_DIR%" (
@@ -41,7 +41,7 @@ echo [+] Extraction completed
 
 echo [4/5] Checking extracted files...
 cd "%EXTRACT_DIR%"
-if not exist "0-一键安装-UV推荐.bat" (
+if not exist "0-Install-UV-Recommended.bat" (
     echo [!] Installation script not found!
     dir
     pause
@@ -57,7 +57,7 @@ echo ==========================================
 echo.
 
 REM Create automated input for installation
-echo y | "0-一键安装-UV推荐.bat"
+echo y | "0-Install-UV-Recommended.bat"
 
 echo.
 echo ==========================================

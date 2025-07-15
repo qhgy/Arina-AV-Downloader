@@ -3,7 +3,7 @@
 
 param(
     [string]$TestDir = "d:\test_arina_smart",
-    [string]$Version = "v1.0.8"
+    [string]$Version = "v1.0.9"
 )
 
 Write-Host "========================================" -ForegroundColor Cyan
@@ -44,8 +44,8 @@ try {
     Set-Location $ExtractDir
     
     $RequiredFiles = @(
-        "0-一键安装-UV推荐.bat",
-        "0-一键安装-传统pip.bat", 
+        "0-Install-UV-Recommended.bat",
+        "0-Install-Traditional-pip.bat",
         "arina_gui.py",
         "arina_cli.py",
         "requirements.txt"
@@ -75,7 +75,7 @@ try {
         
         # Run installation script in background
         Write-Host "Starting UV installation script..." -ForegroundColor Gray
-        $process = Start-Process -FilePath "0-一键安装-UV推荐.bat" -PassThru -WindowStyle Hidden
+        $process = Start-Process -FilePath "0-Install-UV-Recommended.bat" -PassThru -WindowStyle Hidden
         
         # Wait for virtual environment creation
         $timeout = 300 # 5 minutes
